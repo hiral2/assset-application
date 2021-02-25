@@ -18,19 +18,19 @@ RUN dotnet clean
 RUN dotnet publish -c release -o /app --no-restore
 
 # build webapp project
-FROM node:14-alpine AS build-web
-WORKDIR /web
+#  FROM node:14-alpine AS build-web
+#  WORKDIR /web
   
 # Install aurelia cli
-RUN npm i -g aurelia-cli
+#  RUN npm i -g aurelia-cli
 
 # Move and install package.json
-COPY WebApp/package.json ./
-RUN yarn install
+#  COPY WebApp/package*.json ./
+#  RUN yarn install
 
 # Move other files
-COPY WebApp/. .
-RUN npm run build
+#  COPY WebApp/. .
+#  RUN npm run build
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
@@ -38,8 +38,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR /app
 COPY --from=build-api /app ./
 
-RUN mkdir wwwroot
-COPY --from=build-web /web/dist ./wwwroot
+# RUN mkdir wwwroot
+# COPY --from=build-web /web/dist ./wwwroot
 
 EXPOSE 80
 

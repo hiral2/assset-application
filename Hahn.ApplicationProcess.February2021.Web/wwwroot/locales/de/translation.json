@@ -1,0 +1,60 @@
+{
+    "app": {
+        "title": "Asset App",
+        "footer_text": "All rights reserved"
+    },
+    "errorMessages": {
+        "required": "Diese Eingabe ist erforderlich",
+        "email": "Ungültige E-Mail",
+        "minLength_5": "Asset darf nicht kleiner als 5 sein", 
+        "maxLength_1000": "Asset darf nicht kleiner als 1000 sein",
+        "invalid_purchase_date_year": "Kaufdatum darf nicht weniger als ein Jahr betragen",
+        "invalid_department_country": "Ungültiges Land"
+    },
+    "asset": {
+        "nav_title": "Liste",
+        "labels":{
+            "asset_name": "Asset-Name",
+            "department": "Abteilung",
+            "country_of_department": "Land der Abteilung",
+            "email_address_of_department": "E-Mail-Adresse der Abteilung",
+            "purchase_date": "Kaufdatum",
+            "broken": "kaputt"
+        },
+        "list": {
+            "title": "Asset list",
+            "delete_asset_confirmation": "Sind Sie sicher, dass Sie dieses Asset löschen?"
+        },
+        "form": {
+            "title": "Formular",
+            "new_created": "Neues Asset erstellt",
+            "updated": "Asset aktualisiert",
+            "select_empty": "- Select -",
+            "reset_prompt_msg": "Sind Sie sicher, alle Felder zurückzusetzen?"
+        }
+    },
+    "labels": {
+        "no_records": "Keine Datensätze.",
+        "cancel": "Abbrechen",
+        "ok": "OK",
+        "lang": "Set lang",
+        "actions": "Aktionen",
+        "delete_btn": "Delete",
+        "edit_btn": "Edit",
+        "back_btn": "Zurück",
+        "reset_btn": "Reset",
+        "create_btn": "Neu erstellen",
+        "form": {
+            "create": "Send",
+            "update": "Update"
+        }
+    },
+    "error": {
+        "title": "Fehler",
+        "one_or_more_validation_errors_occurred": "Ein oder mehrere Validierungsfehler sind aufgetreten.",
+        "failed_to_fetch": "Internetverbindungsfehler.",
+        "invalid_department_country": "Ungültiges Abteilungsland",
+        "CountryOfDepartment": "Land der Abteilung",
+        "http_code_404": "Nicht gefunden"
+    }
+}

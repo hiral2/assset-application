@@ -1,8 +1,8 @@
 import { DialogService } from 'aurelia-dialog';
 import {autoinject} from 'aurelia-framework';
-import {ErrorInformation} from './dialogs/error-information/error-information'
-import { Prompt } from './dialogs/prompt/prompt';
-import { Notification } from './dialogs/notification/notification';
+import {ErrorInformation} from 'shared/dialogs/error-information/error-information'
+import { Prompt } from 'shared/dialogs/prompt/prompt';
+import { Notification } from 'shared/dialogs/notification/notification';
 
 
 @autoinject
