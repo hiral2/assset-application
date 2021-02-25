@@ -1,0 +1,60 @@
+{
+    "app": {
+        "title": "Asset App",
+        "footer_text": "Alle Rechte vorbehalten"
+    },
+    "errorMessages": {
+        "required": "This input is required",
+        "email": "Invalid email",
+        "minLength_5": "Asset cant be less than 5",
+        "maxLength_1000": "Asset cant be grather than 1000",
+        "invalid_purchase_date_year": "Purchase date cannot be less than one year",
+        "invalid_department_country": "Invalid country"
+    },
+    "asset": {
+        "nav_title": "List",
+        "labels":{
+            "asset_name": "Asset name",
+            "department": "Department",
+            "country_of_department": "Country of department",
+            "email_address_of_department": "Email Address Of Department",
+            "purchase_date": "Purchase Date",
+            "broken": "Broken"
+        },
+        "list": {
+            "title": "Asset list",
+            "delete_asset_confirmation": "Are you sure of delete this asset?"
+        },
+        "form": {
+            "title": "Form",
+            "new_created": "New asset created",
+            "updated": "Asset updated",
+            "select_empty": "-- Select --",
+            "reset_prompt_msg": "Are you sure to reset all fields?"
+        }
+    },
+    "labels": {
+        "no_records": "No records.",
+        "cancel": "Cancel",
+        "ok": "Ok",
+        "lang": "Set lang",
+        "actions": "Actions",
+        "delete_btn": "Delete",
+        "edit_btn": "Edit",
+        "back_btn": "Back",
+        "reset_btn": "Reset",
+        "create_btn": "Create new",
+        "form" :{
+            "create": "Send",
+            "update": "Update"
+        }
+    },
+    "error": {
+        "title": "Error",
+        "one_or_more_validation_errors_occurred": "One or more validation errors occurred.",
+        "failed_to_fetch": "Internet connection error.",
+        "invalid_department_country": "Invalid department country",
+        "CountryOfDepartment": "Country Of Department",
+        "http_code_404": "Not found"
+    }
+}

@@ -1,0 +1,12 @@
+**/bin
+**/obj
+**/out
+**/.vscode
+**/.vs
+.git
+.dotnet
+.Microsoft.DotNet.ImageBuilder
+TestResults/
+**/log*.txt
+
+**/node_modules

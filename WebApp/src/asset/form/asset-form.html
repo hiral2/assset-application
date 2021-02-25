@@ -1,0 +1,80 @@
+<template>
+    <h1 i18n="asset.form.title">Form</h1>
+
+    <form autocomplete="off" if.bind="asset" submit.trigger="submit()">
+        <div class="row">
+            <div class="col-6 form-group">
+                <label for="assetName" i18n="asset.labels.asset_name">Asset name</label>
+                <input type="text" class="form-control" id="assetName" disabled.bind="loading" value.bind="asset.AssetName & validate">
+            </div>
+            <div class="col-6 form-group">
+                <label for="assetDepartment" i18n="asset.labels.department">Department</label>
+                <select class="form-control" id="assetDepartment" disabled.bind="loading" value.bind="asset.Department & validate">
+                    <option value='' i18n="asset.form.select_empty">-- Select --</option>
+                    <option value='HQ'>HQ</option>
+                    <option value='Store1'>Store1</option>
+                    <option value='Store2'>Store2</option>
+                    <option value='Store3'>Store3</option>
+                    <option value='MaintenanceStation'>MaintenanceStation</option>
+                </select>
+            </div>
+            <div class="col-6 form-group">
+                <div class="dropdown">
+                    <label for="assetCountryOfDepartment" i18n="asset.labels.country_of_department">Country Of Department</label>
+                    <input type="text" keyup.trigger="refreshFilteredCountries()" class="form-control" id="assetCountryOfDepartment" autocomplete="off" disabled.bind="loading" value.bind="asset.CountryOfDepartment & validate">
+                    <div class="dropdown-menu ${filteredCountries.length>0 ? 'show' : ''}" >
+                        <a repeat.for="country of filteredCountries" class="dropdown-item" click.trigger="setCountry(country.Name)">${country.Name}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 form-group">
+                <label for="assetEmailAddressOfDepartment" i18n="asset.labels.email_address_of_department">Email Address Of Department</label>
+                <input type="email" class="form-control" id="assetEmailAddressOfDepartment" disabled.bind="loading" value.bind="asset.EMailAddressOfDepartment & validate">
+            </div>
+            
+            <div class="col-6 form-group">
+                <label for="assetPurchaseDate" i18n="asset.labels.purchase_date">Purchase Date</label>
+                <input type="datetime-local" class="form-control" id="assetPurchaseDate" disabled.bind="loading" value.bind="asset.PurchaseDate & validate">
+            </div>
+
+            <div class="col-6 form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="assetBroken" disabled.bind="loading" checked.bind="asset.Broken">
+                    <label class="form-check-label" for="assetBroken" i18n="asset.labels.broken">
+                        Broken
+                    </label>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-secondary" href="#/assets/list" i18n="labels.back_btn">Back</a>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <button type="button" disabled.bind="!isResetEnabled || loading" class="btn btn-danger mr-2" click.trigger="reset()" i18n="labels.reset_btn">Reset</button>
+                <button type="submit" disabled.bind="!isValid || loading" class="btn btn-success">
+                    <div if.bind="loading">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <div else>
+                        <span if.bind="!asset.Id" i18n="labels.form.create">
+                            Create
+                        </span>
+                        <span else i18n="labels.form.update">
+                            update
+                        </span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div else>
+        <div if.bind="loading" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</template>
+

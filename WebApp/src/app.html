@@ -1,0 +1,14 @@
+<template>
+  <require from="./app.css"></require>
+  <require from="shared/layouts/nav-bar/nav-bar"></require>
+  <require from="shared/layouts/footer-bar/footer-bar"></require>
+  
+  <header>
+    <nav-bar></nav-bar>
+  </header>  
+  
+  <div class="container">
+    <router-view></router-view>
+    <footer-bar></footer-bar>
+  </div>
+</template>

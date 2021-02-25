@@ -1,0 +1,60 @@
+<template>
+    <require from="shared/date-format"></require>
+   
+    <div class="row mt-5">
+        <div class="col">
+            <h1 i18n="asset.list.title">Asset list</h1>
+        </div>
+        <div class="col d-flex">
+            <a class="mt-auto ml-auto  btn btn-success" href="#/assets/form" i18n="labels.create_btn">Create</a>
+        </div>
+    </div>
+    
+    <div if.bind="loading" class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col">
+            <table if.bind="list" class="table table-responsive">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" i18n="asset.labels.asset_name">Asset name</th>
+                    <th scope="col" i18n="asset.labels.department">Department</th>
+                    <th scope="col" i18n="asset.labels.country_of_department">CountryOfDepartment</th>
+                    <th scope="col" i18n="asset.labels.email_address_of_department">EmailAddressOfDepartment</th>
+                    <th scope="col" i18n="asset.labels.purchase_date">PurchaseDate</th>
+                    <th scope="col" i18n="asset.labels.broken">Broken</th>
+                    <th scope="col" i18n="labels.actions"> Actions</th>
+                </tr>
+                </thead>
+                <tbody  repeat.for="asset of list">
+                    <tr>
+                        <th scope="row">${asset.Id}</th>
+                        <td>${asset.AssetName}</td>
+                        <td>${asset.Department}</td>
+                        <td>${asset.CountryOfDepartment}</td>
+                        <td>${asset.EMailAddressOfDepartment}</td>
+                        <td>${asset.PurchaseDate | dateFormat}</td>
+                        <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="brokenCheckbox" disabled checked.bind="asset.Broken">
+                                <label class="custom-control-label" for="brokenCheckbox"></label>
+                            </div>
+                        <td>
+                            <button type="button" disabled.bind="deleting" class="btn btn-danger"  click.trigger="delete(asset)" i18n="labels.delete_btn">Delete</button>
+                            <a class="btn btn-primary" href.bind="'#/assets/form/' + asset.Id" i18n="labels.edit_btn">Edit</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody if.bind="list.length == 0">
+                    <tr>
+                        <th colspan="8" class="text-center" i18n="labels.no_records"> </th>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</template>

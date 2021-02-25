@@ -1,0 +1,22 @@
+<template>
+    <ux-dialog>
+        <ux-dialog-header>
+            <h2 i18n="error.title"></h2>
+        </ux-dialog-header>
+        <ux-dialog-body>
+            <p i18n.bind="message" class="font-weight-bold">
+            </p>
+            <div class="row" repeat.for="err of error.errors">
+                <div class="col" i18n.bind="'error.'+err.PropertyName"></div>
+                <div class="col" i18n.bind="'error.'+err.ErrorMessage"></div>
+            </div>
+        </ux-dialog-body>
+
+        <ux-dialog-footer>
+            <button click.trigger="controller.cancel()" i18n="labels.cancel">Cancel</button>
+            <button click.trigger="controller.ok()" i18n="labels.ok">Ok</button>
+        </ux-dialog-footer>
+    </ux-dialog>
+</template>
+
+
